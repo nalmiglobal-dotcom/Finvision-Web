@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  outputFileTracingRoot: path.resolve(__dirname, '../../'),
+  
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -44,4 +44,3 @@ export default withPWA({
   skipWaiting: true,
   disable: process.env.NODE_ENV === 'development',
 })(nextConfig);
-// Orchids restart: 1770458695040
