@@ -279,7 +279,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-4 justify-end">
             <ThemeToggle />
             <a
-              href="http://crm.myfinvision.com"
+              href="https://www.crm.myfinvision.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-background font-semibold text-sm py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] hover:scale-105 relative overflow-hidden group"
@@ -318,7 +318,7 @@ const Header = () => {
             </ul>
             <div className="pt-4 pb-2 space-y-2">
               <a
-                href="http://crm.myfinvision.com"
+                href="https://www.crm.myfinvision.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-background font-semibold text-sm py-3 px-4 rounded-lg transition-all duration-300"
