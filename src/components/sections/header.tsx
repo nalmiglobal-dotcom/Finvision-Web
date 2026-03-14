@@ -36,7 +36,6 @@ const courseLinks = [
 const navItems: NavItem[] = [
   { label: 'HOME', href: '/' },
   { label: 'COURSE', href: '#courses' },
-  { label: 'LEADERBOARD', href: '/leaderboard' },
   { label: 'BLOG', href: '/blog' },
   { label: 'CONTACT', href: '#connect' },
 ];
@@ -92,10 +91,10 @@ const Header = () => {
   const renderNavLink = (item: NavItem, index: number) => {
     const isActive = item.href && pathname === item.href;
     const isHovered = hoveredIndex === index;
-    
+
     if (item.hasDropdown) {
       return (
-        <li 
+        <li
           key={item.label}
           className="relative"
           onMouseEnter={() => {
@@ -107,22 +106,22 @@ const Header = () => {
             setIsCoursesDropdownOpen(false);
           }}
         >
-          <button 
+          <button
             className={`relative font-semibold text-sm tracking-wider transition-all duration-300 py-2 px-4 rounded-lg
               ${isCoursesDropdownOpen ? 'text-primary' : 'text-foreground/80'} 
               hover:text-primary group flex items-center gap-2`}
           >
-            <span 
+            <span
               className={`absolute inset-0 bg-primary/10 rounded-lg transition-all duration-300
                 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
             />
-            
+
             <span className="relative z-10 flex items-center gap-2">
               {item.label}
               <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isCoursesDropdownOpen ? 'rotate-180' : ''}`} />
             </span>
-            
-            <span 
+
+            <span
               className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-primary to-accent transition-all duration-500 rounded-full
                 ${isCoursesDropdownOpen ? 'w-[80%] opacity-100' : isHovered ? 'w-[80%] opacity-100' : 'w-0 opacity-0'}`}
             />
@@ -134,7 +133,7 @@ const Header = () => {
                 <div className="bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 p-3 text-center border-b border-white/10">
                   <p className="text-foreground font-bold text-sm uppercase tracking-wider">Our Courses</p>
                 </div>
-                
+
                 {courseLinks.map((course, idx) => {
                   const Icon = course.icon;
                   return (
@@ -161,31 +160,31 @@ const Header = () => {
         </li>
       );
     }
-    
+
     return (
-      <li 
+      <li
         key={item.label}
         className="relative"
         onMouseEnter={() => setHoveredIndex(index)}
         onMouseLeave={() => setHoveredIndex(null)}
       >
-        <Link 
+        <Link
           href={item.href!}
           onClick={(e) => handleNavClick(e, item.href!)}
           className={`relative font-semibold text-sm tracking-wider transition-all duration-300 block py-2 px-4 rounded-lg
             ${isActive ? 'text-primary' : 'text-foreground/80'} 
             hover:text-primary group`}
         >
-          <span 
+          <span
             className={`absolute inset-0 bg-primary/10 rounded-lg transition-all duration-300
               ${isHovered ? 'opacity-100' : 'opacity-0'}`}
           />
-          
+
           <span className="relative z-10 flex items-center gap-2">
             {item.label}
           </span>
-          
-          <span 
+
+          <span
             className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-primary to-accent transition-all duration-500 rounded-full
               ${isActive ? 'w-[80%] opacity-100' : isHovered ? 'w-[80%] opacity-100' : 'w-0 opacity-0'}`}
           />
@@ -196,7 +195,7 @@ const Header = () => {
 
   const renderMobileNavLink = (item: NavItem) => {
     const isActive = item.href && pathname === item.href;
-    
+
     if (item.hasDropdown) {
       return (
         <li key={item.label}>
@@ -208,7 +207,7 @@ const Header = () => {
             <span>{item.label}</span>
             <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMobileCoursesOpen ? 'rotate-180' : ''}`} />
           </button>
-          
+
           {isMobileCoursesOpen && (
             <ul className="ml-4 mt-2 space-y-2">
               {courseLinks.map((course, idx) => {
@@ -234,10 +233,10 @@ const Header = () => {
         </li>
       );
     }
-    
+
     return (
       <li key={item.label}>
-        <Link 
+        <Link
           href={item.href!}
           onClick={(e) => handleNavClick(e, item.href!)}
           className={`block py-3 text-foreground hover:text-primary transition-colors font-semibold
@@ -276,18 +275,21 @@ const Header = () => {
               </ul>
             </nav>
           </div>
-          
-            <div className="hidden lg:flex items-center gap-4 justify-end">
-              <ThemeToggle />
-              <Link 
-                href="/admission-form-copy" 
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-background font-semibold text-sm py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] hover:scale-105 relative overflow-hidden group"
-              >
-                <span className="relative z-10">Career</span>
-                <ArrowRightCircle className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Link>
-            </div>
+
+          <div className="hidden lg:flex items-center gap-4 justify-end">
+            <ThemeToggle />
+            <a
+              href="http://crm.myfinvision.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-background font-semibold text-sm py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] hover:scale-105 relative overflow-hidden group"
+            >
+              <span className="relative z-10">Login / Sign Up</span>
+              <ArrowRightCircle className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
+
+          </div>
 
           <div className="lg:hidden flex items-center gap-3">
             <ThemeToggle />
@@ -314,16 +316,19 @@ const Header = () => {
             <ul className="flex flex-col space-y-2">
               {navItems.map((item) => renderMobileNavLink(item))}
             </ul>
-              <div className="pt-4 pb-2 space-y-2">
-                <Link 
-                  href="/admission-form-copy" 
-                  className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-background font-semibold text-sm py-3 px-4 rounded-lg transition-all duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <span>Career</span>
-                  <ArrowRightCircle className="w-4 h-4" />
-                </Link>
-              </div>
+            <div className="pt-4 pb-2 space-y-2">
+              <a
+                href="http://crm.myfinvision.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent text-background font-semibold text-sm py-3 px-4 rounded-lg transition-all duration-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span>Login / Sign Up</span>
+                <ArrowRightCircle className="w-4 h-4" />
+              </a>
+
+            </div>
           </div>
         </div>
       )}
