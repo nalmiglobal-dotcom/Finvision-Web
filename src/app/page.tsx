@@ -19,7 +19,6 @@ import { DisclaimerPopup } from '@/components/disclaimer-popup';
 import { RegulatoryDisclaimer } from '@/components/sections/regulatory-disclaimer';
 import DailyMarketNews from '@/components/sections/daily-market-news';
 import { IntroVideo } from '@/components/intro-video';
-import MarketTicker from '@/components/sections/market-ticker';
 import StatsSection from '@/components/sections/stats-section';
 import GlobalReach from '@/components/sections/global-reach';
 import { motion } from 'framer-motion';
@@ -41,18 +40,13 @@ export default function Home() {
       <IntroVideo />
       <DisclaimerPopup />
       <LaunchPopup />
-      
-      <MarketTicker />
+    
       
       <Header />
       
       <main className="flex-1">
         <Hero />
         
-        <Reveal>
-          <StatsSection />
-        </Reveal>
-
         <Reveal>
           <DailyMarketNews />
         </Reveal>
@@ -89,10 +83,6 @@ export default function Home() {
 
         <Reveal>
           <Faq />
-        </Reveal>
-
-        <Reveal>
-          <TrustedBrands />
         </Reveal>
 
         <Reveal>

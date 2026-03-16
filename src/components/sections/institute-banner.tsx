@@ -8,7 +8,7 @@ const socialLinks = [
       Icon: Instagram,
       handle: '@myfinvisionofficial',
       hoverColor: 'group-hover:text-pink-500',
-      href: 'https://www.instagram.com/myfinvisionofficial?igsh=cm4ydTBueHJzZG5x',
+      href: 'https://www.instagram.com/myfinvisioninstitute/',
     },
   {
     name: 'YouTube',

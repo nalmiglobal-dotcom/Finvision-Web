@@ -38,6 +38,7 @@ const navItems: NavItem[] = [
   { label: 'COURSE', href: '#courses' },
   { label: 'BLOG', href: '/blog' },
   { label: 'CONTACT', href: '#connect' },
+  { label: 'CALCULATOR', href: '/calculator' },
 ];
 
 const Header = () => {
